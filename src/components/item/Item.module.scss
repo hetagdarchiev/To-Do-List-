@@ -1,0 +1,127 @@
+$borRadius: 15px;
+@mixin tablet {
+    @media (max-width: 760px) {
+        @content;
+    }
+}
+* {
+    position: relative;
+}
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-radius: $borRadius;
+    padding-block: 10px;
+    padding-inline: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    @include tablet() {
+        padding-block: 5px;
+        font-size: calc(22 / 16) * 1rem;
+    }
+    &__btn {
+        flex-shrink: 0;
+        max-width: 50px;
+        height: 50px;
+        width: 100%;
+        padding: 5px;
+        aspect-ratio: 1;
+        position: relative;
+        cursor: pointer;
+        span {
+            position: absolute;
+            transition: 0.3s ease;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 3px;
+            border-radius: $borRadius;
+            background-color: #000;
+            &:first-child {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            &:last-child {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+        &:hover {
+            span {
+                background-color: white;
+            }
+        }
+    }
+    &__text {
+        transition: 0.3s ease-in;
+        flex-grow: 1;
+        overflow-x: auto;
+        overflow-y: hidden;
+        height: 50px;
+        max-width: 700px;
+        &:focus-visible {
+            border-bottom: 1px solid white !important;
+        }
+        @include tablet() {
+            font-weight: 500;
+        }
+        &::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 2px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: black;
+            border-radius: 2px;
+            border-radius: $borRadius;
+        }
+        scrollbar-width: thin; 
+        scrollbar-color: black transparent; 
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        &:hover {
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        flex-grow: 2;
+    }
+    &__date-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: calc(18 / 16) * 1rem;
+        font-weight: 700;
+        height: 70px;
+        @include tablet() {
+            font-size: calc(16 / 16) * 1rem;
+        }
+        div {
+            text-align: center;
+            transition: 0.3s ease-in;
+
+            &:hover,
+            &:focus {
+                padding: 5px 10px;
+                transform: scale(1.5);
+                background-color: white;
+                border-radius: $borRadius;
+
+                @include tablet() {
+                    padding: 5px;
+                }
+                &:first-child {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

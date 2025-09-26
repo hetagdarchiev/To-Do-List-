@@ -1,0 +1,96 @@
+@use "./normalize" as *;
+@import url("https://fonts.googleapis.com/css2?family=Story+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+$borRadius: 15px;
+$maxFontSize: 63;
+$fontSize: 32;
+$minFontSize: 16;
+@mixin tablet {
+    @media (max-width: 760px) {
+        @content;
+    }
+}
+body {
+    background-image: linear-gradient(51deg, #06818a 0%, #b10fff 100%);
+    min-height: 100vh;
+    padding-block: 20px;
+    padding-inline: 5px;
+    background-size: cover;
+}
+button {
+    padding: 7px;
+    &:focus-visible {
+        border-bottom: 1px solid white !important;
+    }
+    box-shadow:
+        1px 2px 8px 0px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-radius: $borRadius;
+    transform-origin: center center;
+    transition: 0.3s ease;
+    &:hover {
+        transform: scale(1.03);
+        transform-origin: center center;
+        color: #fff;
+        letter-spacing: 0.3em;
+    }
+}
+.ToDoList {
+    background-color: oklab(100% 0 -0.00011 / 0.2);
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    max-width: 1000px;
+    margin-inline: auto;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    border-radius: $borRadius;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: calc($fontSize / $minFontSize) * 1rem;
+    @include tablet() {
+        font-size: calc(22 / $minFontSize) * 1rem;
+    }
+    &__write {
+        &:focus-visible {
+            border-bottom: 1px solid white;
+            outline-offset: 2px;
+            border-radius: $borRadius;
+        }
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 5px;
+        border-radius: $borRadius;
+        margin-bottom: 10px;
+        animation: blink-caret 1.8s step-end infinite;
+        caret-color: white;
+        flex: 1;
+        flex-basis: 400px;
+        &-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+    }
+}
+h1 {
+    text-align: center;
+    font-family: "Story Script", sans-serif;
+    font-weight: 700;
+    font-size: calc($maxFontSize / $minFontSize) * 1rem;
+    margin-bottom: 10px;
+}
+@keyframes blink-caret {
+    from {
+        caret-color: #000;
+    }
+    100% {
+        caret-color: #ffffff;
+    }
+}
