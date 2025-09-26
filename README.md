@@ -35,7 +35,9 @@
 
 # 1. Клонируйте репозиторий
 
-git clone [https://github.com/hetagdarchiev/To-Do-List-.git]
+<code>
+    git clone https://github.com/hetagdarchiev/To-Do-List-.git
+</code>
 
 # 2. Установите зависимости
 
@@ -96,6 +98,7 @@ src/
 <p><strong>Props:</strong></p>
 <ul>
     <li><code>text</code> - текст задачи</li>
+    <li><code>index</code> - индекс для tabIndex</li>
     <li><code>date</code> - дата создания</li>
     <li><code>time</code> - время создания</li>
     <li><code>onDelete</code> - функция удаления</li>
