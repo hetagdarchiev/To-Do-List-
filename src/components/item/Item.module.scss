@@ -4,9 +4,6 @@ $borRadius: 15px;
         @content;
     }
 }
-* {
-    position: relative;
-}
 .item {
     display: flex;
     justify-content: space-between;
