@@ -1,16 +1,114 @@
-# React + Vite
+    <h1>📝 To Do List - Документация</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    <h2>🚀 Описание</h2>
+    <p>Простое и удобное приложение для управления задачами с сохранением в локальном хранилище.</p>
 
-Currently, two official plugins are available:
+    <h2>⭐ Возможности</h2>
+    <ul>
+        <li>✅ Добавление новых задач</li>
+        <li>🗑️ Удаление задач</li>
+        <li>💾 Автосохранение в localStorage</li>
+        <li>📅 Автоматическое сохранение даты и времени</li>
+        <li>⌨️ Управление с клавиатуры</li>
+        <li>📱 Адаптивный дизайн</li>
+    </ul>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    <h2>🛠 Технологии</h2>
+    <ul>
+        <li><strong>React</strong> - фреймворк для UI</li>
+        <li><strong>SCSS</strong> - стилизация компонентов</li>
+        <li><strong>LocalStorage</strong> - хранение данных</li>
+        <li><strong>HTML5</strong> - семантическая разметка</li>
+    </ul>
 
-## React Compiler
+    <h2>📦 Установка и запуск</h2>
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+    <h3>Предварительные требования</h3>
+    <ul>
+        <li>Node.js (версия 14 или выше)</li>
+        <li>npm или yarn</li>
+        <li>vite (желательно версия 7.1.7)</li>
+    </ul>
 
-## Expanding the ESLint configuration
+    <h3>Шаги установки</h3>
+    <pre><code>
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# 1. Клонируйте репозиторий
+
+git clone [https://github.com/hetagdarchiev/To-Do-List-.git]
+
+# 2. Установите зависимости
+
+npm install
+
+# 3. Запустите приложение
+
+npm run dev
+
+# 4. Откройте в браузере
+
+http://localhost:3000
+</code></pre>
+
+    <h2>🎮 Использование</h2>
+
+    <h3>Добавление задачи</h3>
+    <ol>
+        <li>Введите текст задачи в поле ввода</li>
+        <li>Нажмите кнопку "Отправить" или клавишу <kbd>Enter</kbd></li>
+    </ol>
+
+    <h3>Управление с клавиатуры</h3>
+    <ul>
+        <li><kbd>Tab</kbd> - переход между элементами</li>
+        <li><kbd>Enter</kbd> на поле ввода - добавление задачи</li>
+        <li><kbd>Enter</kbd> на кнопке удаления - удаление задачи</li>
+    </ul>
+
+    <h3>Удаление задачи</h3>
+    <p>Нажмите на кнопку с крестиком (×) справа от задачи для ее удаления.</p>
+
+    <h2>🏗 Структура проекта</h2>
+    <pre><code>
+
+src/
+├── components/
+│ └── Item/
+│ ├── Item.jsx # Компонент задачи
+│ └── Item.module.scss # Стили задачи
+├── _normalize_.scss # нормализация стилей
+├── index.scss # основной файл стилей
+├── App.jsx # Главный компонент
+└── index.jsx # Точка входа
+</code></pre>
+
+    <h2>📋 Компоненты</h2>
+
+    <h3>App - Главный компонент</h3>
+    <p><strong>Функциональность:</strong></p>
+    <ul>
+        <li>Управление состоянием задач</li>
+        <li>Работа с localStorage</li>
+        <li>Обработка добавления задач</li>
+        <li>Обработка удаления задач</li>
+    </ul>
+
+    <h3>Item - Компонент задачи</h3>
+    <p><strong>Props:</strong></p>
+    <ul>
+        <li><code>text</code> - текст задачи</li>
+        <li><code>date</code> - дата создания</li>
+        <li><code>time</code> - время создания</li>
+        <li><code>onDelete</code> - функция удаления</li>
+    </ul>
+
+    <h2>💾 Хранение данных</h2>
+    <p>Данные сохраняются в localStorage браузера под ключом <code>"items"</code>.</p>
+
+    <h2>🎨 Особенности интерфейса</h2>
+    <ul>
+        <li>Адаптивный дизайн для мобильных устройств</li>
+        <li>Плавные анимации при взаимодействии</li>
+        <li>Визуальный feedback при наведении</li>
+        <li>Поддержка клавиатурной навигации</li>
+    </ul>
