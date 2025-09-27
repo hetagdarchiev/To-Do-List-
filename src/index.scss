@@ -12,12 +12,25 @@ $minFontSize: 16;
         @content;
     }
 }
+@mixin mobile {
+    @media (max-width: 420px) {
+        @content;
+    }
+}
 body {
     background-image: linear-gradient(51deg, #06818a 0%, #b10fff 100%);
     min-height: 100vh;
-    padding-block: 20px;
+    width: 100vw;
+    padding-block: 100px;
+    min-width: 300px;
     padding-inline: 5px;
     background-size: cover;
+    @include tablet() {
+        padding-block: 50px;
+    }
+    @include mobile() {
+        padding-block: 20px;
+    }
 }
 button {
     padding: 7px;
@@ -58,7 +71,6 @@ button {
         &:focus-visible {
             border-bottom: 1px solid white;
             outline-offset: 2px;
-            border-radius: $borRadius;
         }
         width: 100%;
         background-color: rgba(255, 255, 255, 0.1);
@@ -76,6 +88,10 @@ button {
             flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 20px;
+            @include mobile() 
+            {
+                margin-bottom: 0;
+            }
         }
     }
 }

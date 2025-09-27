@@ -4,6 +4,11 @@ $borRadius: 15px;
         @content;
     }
 }
+@mixin mobile {
+    @media (max-width: 420px) {
+        @content;
+    }
+}
 .item {
     display: flex;
     justify-content: space-between;
@@ -55,12 +60,19 @@ $borRadius: 15px;
         overflow-x: auto;
         overflow-y: hidden;
         height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        min-width: 0;
         max-width: 700px;
         &:focus-visible {
             border-bottom: 1px solid white !important;
         }
         @include tablet() {
             font-weight: 500;
+        }
+        @include mobile {
+            text-align: center;
         }
         &::-webkit-scrollbar {
             width: 5px;
@@ -77,10 +89,11 @@ $borRadius: 15px;
             border-radius: 2px;
             border-radius: $borRadius;
         }
-        scrollbar-width: thin; 
-        scrollbar-color: black transparent; 
+        scrollbar-width: thin;
+        scrollbar-color: black transparent;
         -ms-overflow-style: -ms-autohiding-scrollbar;
-        &:hover {
+        &:hover,
+        &:focus-visible {
             font-weight: 500;
             letter-spacing: 0.02em;
         }
@@ -90,6 +103,15 @@ $borRadius: 15px;
         align-items: center;
         gap: 50px;
         flex-grow: 2;
+        min-width: 0;
+        @include tablet {
+            gap: 10px;
+        }
+        @include mobile() {
+            gap: 0px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
     &__date-wrapper {
         display: flex;
@@ -100,6 +122,9 @@ $borRadius: 15px;
         height: 70px;
         @include tablet() {
             font-size: calc(16 / 16) * 1rem;
+        }
+        @include mobile() {
+            height: 50px;
         }
         div {
             text-align: center;

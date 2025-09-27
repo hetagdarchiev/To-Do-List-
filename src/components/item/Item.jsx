@@ -7,7 +7,7 @@ export default function item(params) {
           <div tabIndex={params.index + 5}>{params.time}</div>
           <div tabIndex={params.index + 6}>{params.date}</div>
         </div>
-        <div className={`${classes.item__text}`} tabIndex={4}>
+        <div className={`${classes.item__text}`} title={params.title} tabIndex={4}>
           {params.text}
         </div>
       </div>

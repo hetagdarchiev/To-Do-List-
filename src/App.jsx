@@ -95,6 +95,7 @@ function App() {
               time={el.time}
               text={el.text}
               index={index}
+              title={el.text}
               onDelete={() => handleDelete(el.id)}
             />
           ))}
